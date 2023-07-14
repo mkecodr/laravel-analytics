@@ -1,6 +1,6 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4\Exceptions;
+namespace MkEcodr\AnalyticsV4\Exceptions;
 
 class InvalidMetricException extends \InvalidArgumentException
 {

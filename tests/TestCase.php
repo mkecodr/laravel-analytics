@@ -1,8 +1,8 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4\Tests;
+namespace MkEcodr\AnalyticsV4\Tests;
 
-use MkEcodr\LaravelAnalyticsV4\LaravelAnalyticsV4ServiceProvider;
+use MkEcodr\AnalyticsV4\AnalyticsV4ServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            LaravelAnalyticsV4ServiceProvider::class,
+            AnalyticsV4ServiceProvider::class,
         ];
     }
 

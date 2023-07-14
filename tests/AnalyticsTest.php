@@ -1,17 +1,17 @@
 <?php
 
-use MkEcodr\LaravelAnalyticsV4\Period;
-use MkEcodr\LaravelAnalyticsV4\RunReportConfiguration;
+use MkEcodr\AnalyticsV4\Period;
+use MkEcodr\AnalyticsV4\RunReportConfiguration;
 
 it('throws when invalid metrics are requested', function () {
-    $runConfiguration = new \MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runConfiguration = new \MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runConfiguration->addMetric('modelNumber');
-})->throws(\MkEcodr\LaravelAnalyticsV4\Exceptions\InvalidMetricException::class);
+})->throws(\MkEcodr\AnalyticsV4\Exceptions\InvalidMetricException::class);
 
 it('throws when invalid dimensions are requested', function () {
-    $runConfiguration = new \MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runConfiguration = new \MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runConfiguration->addDimension('personality');
-})->throws(\MkEcodr\LaravelAnalyticsV4\Exceptions\InvalidDimensionException::class);
+})->throws(\MkEcodr\AnalyticsV4\Exceptions\InvalidDimensionException::class);
 
 it('can return a new instance of the analytics class from the factory', function () {
     $configuration = [
@@ -36,16 +36,16 @@ it('can return a new instance of the analytics class from the factory', function
             ],
         ],
     ];
-    expect(MkEcodr\LaravelAnalyticsV4\LaravelAnalyticsV4Factory::createFromConfiguration($configuration))->toBeInstanceOf(\MkEcodr\LaravelAnalyticsV4\LaravelAnalyticsV4::class);
+    expect(MkEcodr\AnalyticsV4\AnalyticsV4Factory::createFromConfiguration($configuration))->toBeInstanceOf(\MkEcodr\AnalyticsV4\AnalyticsV4::class);
 });
 
 it('properly generates the required configuration for the underlying analytics library', function () {
     // We want to see blog performance
-    $filter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $filter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $filter->setDimension('landingPage');
     $filter->contains('/blog/');
 
-    $runReport = new MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runReport = new MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runReport->setStartDate('2022-09-01')->setEndDate('2022-09-30');
     $runReport->addDimensions(['country', 'landingPage', 'date']);
     $runReport->addMetric('sessions');
@@ -66,11 +66,11 @@ it('properly generates the required configuration for the underlying analytics l
 
 it('produces proper configuration for single dimension filter configurations', function () {
     // We want to see blog performance
-    $filter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $filter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $filter->setDimension('landingPage');
     $filter->contains('/blog/');
 
-    $runReport = new MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runReport = new MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runReport->setStartDate('2022-09-01')->setEndDate('2022-09-30');
     $runReport->addDimensions(['country', 'landingPage', 'date']);
     $runReport->addMetric('sessions');
@@ -85,11 +85,11 @@ it('produces proper configuration for single dimension filter configurations', f
 
 it('produces proper configuration for single metric filter configurations', function () {
     // We want to see blog performance
-    $filter = new MkEcodr\LaravelAnalyticsV4\Filters\NumericFilter();
+    $filter = new MkEcodr\AnalyticsV4\Filters\NumericFilter();
     $filter->setMetric('sessions');
     $filter->greaterThanOrEqual(500);
 
-    $runReport = new MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runReport = new MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runReport->setStartDate('2022-09-01')->setEndDate('2022-09-30');
     $runReport->addDimensions(['country', 'landingPage', 'date']);
     $runReport->addMetric('sessions');
@@ -104,15 +104,15 @@ it('produces proper configuration for single metric filter configurations', func
 
 it('produces proper configuration for "AND" filter group configurations', function () {
     // We want to see blog performance
-    $blogFilter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $blogFilter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $blogFilter->setDimension('landingPage');
     $blogFilter->contains('/blog/');
 
-    $countryFilter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $countryFilter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $countryFilter->setDimension('country');
     $countryFilter->exactlyMatches('United States');
 
-    $runReport = new MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runReport = new MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runReport->setStartDate('2022-09-01')->setEndDate('2022-09-30');
     $runReport->addDimensions(['country', 'landingPage', 'date']);
     $runReport->addMetric('sessions');
@@ -134,15 +134,15 @@ it('produces proper configuration for "AND" filter group configurations', functi
 
 it('produces proper configuration for "OR" filter group configurations', function () {
     // We want to see blog performance
-    $blogFilter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $blogFilter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $blogFilter->setDimension('landingPage');
     $blogFilter->contains('/blog/');
 
-    $countryFilter = new MkEcodr\LaravelAnalyticsV4\Filters\StringFilter();
+    $countryFilter = new MkEcodr\AnalyticsV4\Filters\StringFilter();
     $countryFilter->setDimension('country');
     $countryFilter->exactlyMatches('United States');
 
-    $runReport = new MkEcodr\LaravelAnalyticsV4\RunReportConfiguration();
+    $runReport = new MkEcodr\AnalyticsV4\RunReportConfiguration();
     $runReport->setStartDate('2022-09-01')->setEndDate('2022-09-30');
     $runReport->addDimensions(['country', 'landingPage', 'date']);
     $runReport->addMetric('sessions');

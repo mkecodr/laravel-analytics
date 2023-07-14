@@ -43,10 +43,10 @@ return [
 Inside Laravel:
 
 ```php
-use MkEcodr\LaravelAnalyticsV4\Period;
-use MkEcodr\LaravelAnalyticsV4\PrebuiltRunConfigurations;
+use MkEcodr\AnalyticsV4\Period;
+use MkEcodr\AnalyticsV4\PrebuiltRunConfigurations;
 
-$client = App::make('laravel-analytics-v4');
+$client = App::make('analytics-v4');
 $lastMonth = Period::months(1);
 $results = $client->runReport(PrebuiltRunConfigurations::getMostVisitedPages($lastMonth));
 ```
@@ -54,7 +54,7 @@ $results = $client->runReport(PrebuiltRunConfigurations::getMostVisitedPages($la
 You may configure your own report configuration, or use a pre-built report:
 ```php
 // Use this on the laravel side to get it from the container
-$analytics = App::make('laravel-analytics-v4');
+$analytics = App::make('analytics-v4');
 
 // Prepare a filter
 $filter = new StringFilter();

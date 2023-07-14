@@ -1,16 +1,16 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4;
+namespace MkEcodr\AnalyticsV4;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 
-class LaravelAnalyticsV4Client
+class AnalyticsV4Client
 {
     protected string $propertyId;
 
     protected BetaAnalyticsDataClient $client;
 
-    public function setProperty(string $propertyId): LaravelAnalyticsV4Client
+    public function setProperty(string $propertyId): AnalyticsV4Client
     {
         $this->propertyId = $propertyId;
 

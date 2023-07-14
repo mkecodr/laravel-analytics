@@ -1,6 +1,6 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4;
+namespace MkEcodr\AnalyticsV4;
 
 class AnalyticsMetrics
 {

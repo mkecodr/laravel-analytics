@@ -1,6 +1,6 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4;
+namespace MkEcodr\AnalyticsV4;
 
 use Illuminate\Support\Str;
 use Google\Analytics\Data\V1beta\Metric;
@@ -9,11 +9,11 @@ use Google\Analytics\Data\V1beta\DateRange;
 use Google\Analytics\Data\V1beta\Dimension;
 use Google\Analytics\Data\V1beta\FilterExpression;
 use Google\Analytics\Data\V1beta\RunReportRequest;
-use MkEcodr\LaravelAnalyticsV4\Filters\StringFilter;
+use MkEcodr\AnalyticsV4\Filters\StringFilter;
 use Google\Analytics\Data\V1beta\FilterExpressionList;
-use MkEcodr\LaravelAnalyticsV4\Filters\AnalyticsFilter;
-use MkEcodr\LaravelAnalyticsV4\Exceptions\InvalidMetricException;
-use MkEcodr\LaravelAnalyticsV4\Exceptions\InvalidDimensionException;
+use MkEcodr\AnalyticsV4\Filters\AnalyticsFilter;
+use MkEcodr\AnalyticsV4\Exceptions\InvalidMetricException;
+use MkEcodr\AnalyticsV4\Exceptions\InvalidDimensionException;
 
 class RunReportConfiguration
 {

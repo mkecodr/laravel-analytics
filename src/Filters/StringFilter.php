@@ -1,6 +1,6 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4\Filters;
+namespace MkEcodr\AnalyticsV4\Filters;
 
 use Google\Analytics\Data\V1beta\Filter;
 use Google\Analytics\Data\V1beta\Filter\StringFilter\MatchType;

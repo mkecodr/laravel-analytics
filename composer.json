@@ -4,7 +4,7 @@
     "keywords": [
         "MkEcodr",
         "laravel",
-        "laravel-analytics-v4"
+        "analytics-v4"
     ],
     "homepage": "https://github.com/mkecodr/laravel-analytics",
     "license": "MIT",
@@ -29,13 +29,13 @@
     },
    "autoload": {
         "psr-4": {
-            "MkEcodr\\LaravelAnalyticsV4\\": "src",
-            "MkEcodr\\LaravelAnalyticsV4\\Database\\Factories\\": "database/factories"
+            "MkEcodr\\AnalyticsV4\\": "src",
+            "MkEcodr\\AnalyticsV4\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MkEcodr\\LaravelAnalyticsV4\\Tests\\": "tests"
+            "MkEcodr\\AnalyticsV4\\Tests\\": "tests"
         }
     },
     "authors": [
@@ -51,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MkEcodr\\LaravelAnalyticsV4\\LaravelAnalyticsV4ServiceProvider"
+                "MkEcodr\\AnalyticsV4\\AnalyticsV4ServiceProvider"
             ],
             "aliases": {
-                "LaravelAnalyticsV4": "MkEcodr\\LaravelAnalyticsV4\\Facades\\LaravelAnalyticsV4"
+                "AnalyticsV4": "MkEcodr\\AnalyticsV4\\Facades\\AnalyticsV4"
             }
         }
     },

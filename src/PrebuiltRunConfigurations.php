@@ -1,8 +1,8 @@
 <?php
 
-namespace MkEcodr\LaravelAnalyticsV4;
+namespace MkEcodr\AnalyticsV4;
 
-use MkEcodr\LaravelAnalyticsV4\Filters\StringFilter;
+use MkEcodr\AnalyticsV4\Filters\StringFilter;
 
 class PrebuiltRunConfigurations
 {
