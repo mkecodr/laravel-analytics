@@ -113,11 +113,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Submit a PR with passing tests.
 
-## Credits
-
-- [JL](https://github.com/WalrusSoup)
-- [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
