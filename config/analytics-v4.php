@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'property_id' => env('ANALYTICS_PROPERTY_ID', '372636606'),
+    'property_id' => env('ANALYTICS_PROPERTY_ID', '#######'),
     'service_account_credentials_json' => public_path('service-account-credentials.json'),
     'cache' => [
         'enableCaching' => env('ANALYTICS_CACHE', false),

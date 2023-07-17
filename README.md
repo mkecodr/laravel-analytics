@@ -109,9 +109,21 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
+## New Feature Includes
 
-Submit a PR with passing tests.
+Set Not expression 
+
+```php
+// Prepare a filter
+$filter = new StringFilter();
+$filter->setDimension('eventName')->exactlyMatches('Brand Viewer')->setNotExpression();
+```
+Run batch reports at a time
+```php
+$array = [] // add all run report request
+$this->batchReport($array);
+```
+Please note: You can run Max 5 request at a time
 
 ## License
 
